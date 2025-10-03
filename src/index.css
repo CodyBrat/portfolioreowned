@@ -1,8 +1,12 @@
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: black; /* 👈 Global background */
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-.bg-gif {
-  background: url('https://i.pinimg.com/originals/7a/f8/ce/7af8ced6fc14a1f2840b72187ba19248.gif') no-repeat center center fixed;
-  background-size: cover;
-}
