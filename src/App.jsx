@@ -24,11 +24,11 @@ function App() {
       {/* Foreground Text */}
       <div className="bg-gif h-screen w-screen flex items-center justify-center">
         <h1 className="text-[14rem] font-bold text-white drop-shadow-lg">
-           PRIYO 
+           CODY 
         </h1>
-         <div className="w-50"></div>
-        <h1 className="text-[6rem] font-bold text-white drop-shadow-lg">
-          MANIFESTO
+         <div className="w-60"></div>
+        <h1 className="text-[14rem] font-bold text-white drop-shadow-lg">
+          BRAT
           </h1>
       </div>
     </div>
