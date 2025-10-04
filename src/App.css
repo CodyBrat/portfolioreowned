@@ -1,1 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&display=swap');
 @import "tailwindcss";
+
+.font-pixel {
+  font-family: "Pixelify Sans", sans-serif;
+}
+
+.font-press {
+  font-family: "Press Start 2P", system-ui;
+}
+
+@font-face {
+  font-family: "Ethnic";
+  src: url("./assets/fonts/Ethnic.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-ethnic {
+  font-family: "Ethnic", sans-serif;
+}
