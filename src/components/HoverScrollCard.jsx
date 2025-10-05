@@ -6,50 +6,50 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function HoverScrollCard({ children, className, height }) {
   const cardRef = useRef(null);
+  const tweenRef = useRef(null);
 
   useEffect(() => {
     const el = cardRef.current;
     if (!el) return;
 
-    // Create an even faster animation
-    const animation = gsap.fromTo(
+    // Create a scroll-linked tween and keep a ref to it
+    tweenRef.current = gsap.fromTo(
       el,
-      { y: 100, scale: 0.9, opacity: 0 },
+      { y: 100, scale: 0.95, opacity: 0 },
       {
         y: 0,
         scale: 1,
         opacity: 1,
-        duration: 0.1, // Added explicit duration for faster animation
-        ease: "power1.in", // Changed to power1.in for even faster animation
+        ease: "power2.out",
         scrollTrigger: {
           trigger: el,
-          start: "top bottom-=200", // Start animation much earlier
-          end: "top center", // Even shorter animation distance
-          scrub: 0.1, // Minimal scrub time for immediate response
+          start: "top 85%", // adjust to taste
+          end: "top 40%",   // adjust to taste
+          scrub: 0.6,       // smooth follow
           markers: false,
-          onLeave: () => {
-            gsap.to(el, { opacity: 1, duration: 0.1 }); // Ultra-fast opacity transition
-          },
-          onEnterBack: () => {
-            gsap.to(el, { opacity: 1, duration: 0.1 }); // Ultra-fast opacity transition
-          }
         },
       }
     );
 
     return () => {
-      if (animation) animation.kill();
-      ScrollTrigger.getAll().forEach((t) => t.kill());
+      // Kill only this tween and its associated ScrollTrigger
+      if (tweenRef.current) {
+        if (tweenRef.current.scrollTrigger) {
+          tweenRef.current.scrollTrigger.kill();
+        }
+        tweenRef.current.kill();
+        tweenRef.current = null;
+      }
     };
   }, []);
 
   return (
     <div
       ref={cardRef}
-      style={{ 
+      style={{
         height: height || "auto",
-        minHeight: "100vh", // Ensure minimum height
-        paddingBottom: "50px" // Add padding at the bottom
+        minHeight: "100vh",
+        paddingBottom: "50px",
       }}
       className={`rounded-[4rem] shadow-xl flex flex-col items-center justify-center ${className}`}
     >
