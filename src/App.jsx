@@ -4,6 +4,8 @@ import Dither from "./components/Dither.jsx";
 import HoverScrollCard from "./components/HoverScrollCard.jsx";
 import SkyElement from "./components/skyelements.jsx";
 import ScrollReveal from "./components/ScrollReveal.jsx";
+import { HeroParallax } from "./components/hero-parallax.jsx";
+
 
 import avatarImage from "./assets/avatar.png";
 import swagCursor from "./assets/invisible.png";
@@ -26,6 +28,101 @@ import "./App.css";
 
 export default function App() {
   const [hoveringAvatar, setHoveringAvatar] = useState(false);
+  const products = [
+  {
+    title: "Moonbeam",
+    link: "https://gomoonbeam.com",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/moonbeam.png",
+  },
+  {
+    title: "Cursor",
+    link: "https://cursor.so",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/cursor.png",
+  },
+  {
+    title: "Rogue",
+    link: "https://userogue.com",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/rogue.png",
+  },
+ 
+  {
+    title: "Editorially",
+    link: "https://editorially.org",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/editorially.png",
+  },
+  {
+    title: "Editrix AI",
+    link: "https://editrix.ai",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/editrix.png",
+  },
+  {
+    title: "Pixel Perfect",
+    link: "https://app.pixelperfect.quest",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/pixelperfect.png",
+  },
+ 
+  {
+    title: "Algochurn",
+    link: "https://algochurn.com",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/algochurn.png",
+  },
+  {
+    title: "Aceternity UI",
+    link: "https://ui.aceternity.com",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/aceternityui.png",
+  },
+  {
+    title: "Tailwind Master Kit",
+    link: "https://tailwindmasterkit.com",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/tailwindmasterkit.png",
+  },
+  {
+    title: "SmartBridge",
+    link: "https://smartbridgetech.com",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/smartbridge.png",
+  },
+  {
+    title: "Renderwork Studio",
+    link: "https://renderwork.studio",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/renderwork.png",
+  },
+ 
+  {
+    title: "Creme Digital",
+    link: "https://cremedigital.com",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/cremedigital.png",
+  },
+  {
+    title: "Golden Bells Academy",
+    link: "https://goldenbellsacademy.com",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/goldenbellsacademy.png",
+  },
+  {
+    title: "Invoker Labs",
+    link: "https://invoker.lol",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/invoker.png",
+  },
+  {
+    title: "E Free Invoice",
+    link: "https://efreeinvoice.com",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/efreeinvoice.png",
+  },
+];
 
   return (
     <>
@@ -142,7 +239,7 @@ export default function App() {
 
         {/* Scrollable Cards */}
         <div className="w-full relative flex flex-col items-center gap-40 -mt-50">
-          <HoverScrollCard className="w-[90rem] bg-white text-black" height="200rem">
+          <HoverScrollCard className="w-[95rem] bg-white text-black" height="400rem">
             {/* 🌌 Scene Elements */}
             <SkyElement src={redmoon} top="80px" right="470px" width="150px" height="150px" />
             <SkyElement src={longcloud} top="50px" left="45%" width="240px" height="240px" />
@@ -163,7 +260,7 @@ export default function App() {
             </div>
 
             {/* Animals */}
-            <div className="absolute top-[1400px] w-[1300px]">
+            <div className="relative w-[1300px] -mt-250">
               <SkyElement src={fox} bottom="200px" left="5%" width="60px" height="60px" />
               <SkyElement src={fox} bottom="60px" left="25%" width="60px" height="60px" />
               <SkyElement src={fox} bottom="200px" right="53%" width="60px" height="60px" />
@@ -175,8 +272,10 @@ export default function App() {
               <SkyElement src={cat} bottom="250px" left="20%" width="60px" height="60px" />
               <SkyElement src={cat} bottom="60px" left="50px" width="60px" height="60px" />
             </div>
-
-            <div className="font-press text-[5rem]">RECENT WORK</div>
+            {/* Project showcase with HeroParallax */}
+            <div className="w-full relative -mt-50">
+              <HeroParallax products={products} />
+            </div>
           </HoverScrollCard>
         </div>
         </div>
