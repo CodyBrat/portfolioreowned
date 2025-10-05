@@ -13,6 +13,8 @@ import greendragoncloud from "./assets/elements/greendragoncloud.png";
 import smallcloud from "./assets/elements/smallcloud.png";
 import yellowmoon from "./assets/elements/yellowmoon.png";
 import twinkle from "./assets/elements/twinkle.png";
+import fox from "./assets/elements/fox.png";
+import cat from "./assets/elements/cat.png";
 
 import ScrollReveal from "./components/ScrollReveal.jsx";
 
@@ -83,8 +85,8 @@ function App() {
       </div>
 
       {/* Scrollable Cards */}
-      <div className="h-[200vh] w-full relative flex flex-col items-center gap-40 pt-0.25">
-        <HoverScrollCard className="w-[90rem] h-[90rem] bg-white text-black">
+      <div className=" w-full relative flex flex-col items-center gap-40 -mt-40" style={{ height: "200rem" }}>
+        <HoverScrollCard className="w-[90rem] bg-white text-black" height="200rem">
           {/* 🌌 Scene Elements */}
 
           {/* Moons at the sky top */}
@@ -115,7 +117,24 @@ function App() {
               I CRAFT IMMERSIVE DIGITAL WORLDS THAT SHATTER MONOTONY, BLENDING PLAYFULNESS AND PURPOSE TO SPARK AUTHENTIC CONNECTIONS WITH TECHNOLOGY
             </ScrollReveal>
           </div>
+            {/* Animals below the ScrollReveal text */}
+            <div className="absolute top-[1400px] w-[1300px]">
+            <SkyElement src={fox} bottom="200px" left="5%" width="60px" height="60px" />
+            <SkyElement src={fox} bottom="60px" left="25%" width="60px" height="60px" />
+            <SkyElement src={fox} bottom="200px" right="53%" width="60px" height="60px" />
+            <SkyElement src={fox} bottom="60px" right="25%" width="60px" height="60px" />
+            <SkyElement src={fox} bottom="200px" right="5%" width="60px" height="60px" />
 
+            <SkyElement src={cat} bottom="60px" right="5%" width="60px" height="60px" />
+            <SkyElement src={cat} bottom="60px" left="50%" width="60px" height="60px" />
+            <SkyElement src={cat} bottom="250px" right="30%" width="60px" height="60px" />
+            <SkyElement src={cat} bottom="250px" left="20%" width="60px" height="60px" />
+            <SkyElement src={cat} bottom="60px" left="50px" width="60px" height="60px" />
+            </div>
+
+            <div className="font-press text-[5rem]">
+              RECENT WORK
+            </div>
         </HoverScrollCard>
       </div>
     </div>
