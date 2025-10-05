@@ -25,8 +25,9 @@ export default function SmoothCursor({
       const dx = e.clientX - lastMouse.current.x;
       const dy = e.clientY - lastMouse.current.y;
 
-      cursorX.set(e.clientX);
-      cursorY.set(e.clientY);
+      // Use pageX/pageY instead of clientX/clientY to account for scroll position
+      cursorX.set(e.pageX);
+      cursorY.set(e.pageY);
 
       const angle = Math.atan2(dy, dx) * (180 / Math.PI) + 90;
       rotation.set(angle);
@@ -49,7 +50,7 @@ export default function SmoothCursor({
   return (
     <motion.div
       style={{
-        position: "fixed",
+        position: "absolute",
         left: smoothX,
         top: smoothY,
         translateX: "-50%",
@@ -57,7 +58,7 @@ export default function SmoothCursor({
         rotate: smoothRotation,
         scale: smoothScale,
         pointerEvents: "none",
-        zIndex: 100,
+        zIndex: 9999,
         willChange: "transform",
       }}
     >
