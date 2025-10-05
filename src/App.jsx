@@ -4,6 +4,17 @@ import Dither from "./components/Dither.jsx";
 import avatarImage from "./assets/avatar.png";
 import swagCursor from "./assets/invisible.png"; // your hover cursor
 import HoverScrollCard from "./components/HoverScrollCard.jsx";
+import SkyElement from "./components/skyelements.jsx";
+import longcloud from "./assets/elements/longcloud.png";
+import redmoon from "./assets/elements/redmoon.png";
+import moon from "./assets/elements/moon.png";
+import dragoncloud from "./assets/elements/dragoncloud.png";
+import greendragoncloud from "./assets/elements/greendragoncloud.png";
+import smallcloud from "./assets/elements/smallcloud.png";
+import yellowmoon from "./assets/elements/yellowmoon.png";
+import twinkle from "./assets/elements/twinkle.png";
+
+
 import openToWork from "./assets/elements/opentowork.png";
 import SmoothCursor, { DefaultCursorSVG } from "./components/cursors/cursor.jsx";
 import "./App.css";
@@ -77,6 +88,22 @@ function App() {
           <p className="text-2xl max-w-3xl text-center">
             A passionate developer crafting digital experiences 🚀
           </p>
+          {/* 🌌 Scene Elements */}
+
+          {/* Moons at the sky top */}
+          <SkyElement src={redmoon} top="80px" right="470px" width="150px" height="150px" />
+          <SkyElement src={longcloud} top="50px" left="45%" width="240px" height="240px"/>
+
+          <SkyElement src={dragoncloud} top="140px" left="20px" width="280px" height="280px" />
+          <SkyElement src={greendragoncloud} top="150px" right="20px" width="280px" height="280px" />
+
+          <SkyElement src={twinkle} top="40px" left="150px" width="80px" height="80px" />
+          <SkyElement src={twinkle} top="40px" right="150px" width="80px" height="80px" />
+          <SkyElement src={twinkle} top="600px" right="300px" width="70px" height="70px" />
+
+          <SkyElement src={longcloud} top="50px" left="50%" width="500px" height="200px"  />
+          <SkyElement src={smallcloud} top="100px" left="350px" width="120px" height="120px" />
+          <SkyElement src={smallcloud} top="300px" left="550px" width="160px" height="110px" />
         </HoverScrollCard>
       </div>
     </div>
