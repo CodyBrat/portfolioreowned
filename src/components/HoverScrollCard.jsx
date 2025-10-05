@@ -19,7 +19,7 @@ export default function HoverScrollCard({ children, className }) {
     <motion.div
       ref={ref}
       style={{ y, scale, opacity }}
-      className={`rounded-3xl shadow-xl flex flex-col items-center justify-center ${className}`}
+      className={`rounded-[4rem] shadow-xl flex flex-col items-center justify-center ${className}`}
     >
       {children}
     </motion.div>

@@ -14,6 +14,7 @@ import smallcloud from "./assets/elements/smallcloud.png";
 import yellowmoon from "./assets/elements/yellowmoon.png";
 import twinkle from "./assets/elements/twinkle.png";
 
+import ScrollReveal from "./components/ScrollReveal.jsx";
 
 import openToWork from "./assets/elements/opentowork.png";
 import SmoothCursor, { DefaultCursorSVG } from "./components/cursors/cursor.jsx";
@@ -83,11 +84,7 @@ function App() {
 
       {/* Scrollable Cards */}
       <div className="h-[200vh] w-full relative flex flex-col items-center gap-40 pt-0.25">
-        <HoverScrollCard className="w-[85rem] h-[85rem] bg-white text-black">
-          <h2 className="text-6xl font-bold mb-6">About Me</h2>
-          <p className="text-2xl max-w-3xl text-center">
-            A passionate developer crafting digital experiences 🚀
-          </p>
+        <HoverScrollCard className="w-[90rem] h-[90rem] bg-white text-black">
           {/* 🌌 Scene Elements */}
 
           {/* Moons at the sky top */}
@@ -99,11 +96,26 @@ function App() {
 
           <SkyElement src={twinkle} top="40px" left="150px" width="80px" height="80px" />
           <SkyElement src={twinkle} top="40px" right="150px" width="80px" height="80px" />
-          <SkyElement src={twinkle} top="600px" right="300px" width="70px" height="70px" />
+          <SkyElement src={twinkle} top="450px" right="80px" width="70px" height="70px" />
+          <SkyElement src={twinkle} top="450px" left="80px" width="70px" height="70px" />
 
           <SkyElement src={longcloud} top="50px" left="50%" width="500px" height="200px"  />
           <SkyElement src={smallcloud} top="100px" left="350px" width="120px" height="120px" />
           <SkyElement src={smallcloud} top="300px" left="550px" width="160px" height="110px" />
+
+          <div className="absolute top-[500px] left-1/2 -translate-x-1/2 text-center w-[1200px] px-6">
+            <ScrollReveal
+              baseOpacity={0}
+              enableBlur={true}
+              baseRotation={0}
+              blurStrength={10}
+              containerClassName="text-center"
+              textClassName="text-black font-press"
+            >
+              I CRAFT IMMERSIVE DIGITAL WORLDS THAT SHATTER MONOTONY, BLENDING PLAYFULNESS AND PURPOSE TO SPARK AUTHENTIC CONNECTIONS WITH TECHNOLOGY
+            </ScrollReveal>
+          </div>
+
         </HoverScrollCard>
       </div>
     </div>
