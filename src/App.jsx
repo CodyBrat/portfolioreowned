@@ -4,7 +4,7 @@ import Dither from "./components/Dither.jsx";
 import HoverScrollCard from "./components/HoverScrollCard.jsx";
 import SkyElement from "./components/skyelements.jsx";
 import ScrollReveal from "./components/ScrollReveal.jsx";
-import { HeroParallax } from "./components/hero-parallax.jsx";
+import { StickyScroll } from "./components/sticky-scroll-reveal.jsx";
 
 
 import avatarImage from "./assets/avatar.png";
@@ -19,6 +19,7 @@ import smallcloud from "./assets/elements/smallcloud.png";
 import twinkle from "./assets/elements/twinkle.png";
 import fox from "./assets/elements/fox.png";
 import cat from "./assets/elements/cat.png";
+import ecell from "./assets/thumbnail/ecell.png";
 
 import SmoothCursor, { DefaultCursorSVG } from "./components/cursors/cursor.jsx";
 import { gsap } from "gsap";
@@ -28,102 +29,54 @@ import "./App.css";
 
 export default function App() {
   const [hoveringAvatar, setHoveringAvatar] = useState(false);
-  const products = [
+  const content = [
   {
-    title: "Moonbeam",
-    link: "https://gomoonbeam.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/moonbeam.png",
+    title: "Collaborative Editing",
+    description:
+      "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
+    content: (
+      <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] text-white">
+        Collaborative Editing
+      </div>
+    ),
   },
   {
-    title: "Cursor",
-    link: "https://cursor.so",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/cursor.png",
+    title: "Real time changes",
+    description:
+      "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
+    content: (
+      <div className="flex h-full w-full items-center justify-center text-white">
+        <img
+          src="https://i.pinimg.com/originals/d3/62/04/d36204239fce013714bd5db3297722dd.gif"
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="linear board demo"
+        />
+      </div>
+    ),
   },
   {
-    title: "Rogue",
-    link: "https://userogue.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/rogue.png",
-  },
- 
-  {
-    title: "Editorially",
-    link: "https://editorially.org",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/editorially.png",
+    title: "Version control",
+    description:
+      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+    content: (
+      <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] text-white">
+        Version control
+      </div>
+    ),
   },
   {
-    title: "Editrix AI",
-    link: "https://editrix.ai",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/editrix.png",
-  },
-  {
-    title: "Pixel Perfect",
-    link: "https://app.pixelperfect.quest",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/pixelperfect.png",
-  },
- 
-  {
-    title: "Algochurn",
-    link: "https://algochurn.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/algochurn.png",
-  },
-  {
-    title: "Aceternity UI",
-    link: "https://ui.aceternity.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/aceternityui.png",
-  },
-  {
-    title: "Tailwind Master Kit",
-    link: "https://tailwindmasterkit.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/tailwindmasterkit.png",
-  },
-  {
-    title: "SmartBridge",
-    link: "https://smartbridgetech.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/smartbridge.png",
-  },
-  {
-    title: "Renderwork Studio",
-    link: "https://renderwork.studio",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/renderwork.png",
-  },
- 
-  {
-    title: "Creme Digital",
-    link: "https://cremedigital.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/cremedigital.png",
-  },
-  {
-    title: "Golden Bells Academy",
-    link: "https://goldenbellsacademy.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/goldenbellsacademy.png",
-  },
-  {
-    title: "Invoker Labs",
-    link: "https://invoker.lol",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/invoker.png",
-  },
-  {
-    title: "E Free Invoice",
-    link: "https://efreeinvoice.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/efreeinvoice.png",
+    title: "Running out of content",
+    description:
+      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+    content: (
+      <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] text-white">
+        Running out of content
+      </div>
+    ),
   },
 ];
-
   return (
     <>
       {/* Background - Moved outside SmoothScrollContainer */}
@@ -260,7 +213,7 @@ export default function App() {
             </div>
 
             {/* Animals */}
-            <div className="relative w-[1300px] -mt-250">
+            <div className="relative w-[1300px] -mt-[2700px]">
               <SkyElement src={fox} bottom="200px" left="5%" width="60px" height="60px" />
               <SkyElement src={fox} bottom="60px" left="25%" width="60px" height="60px" />
               <SkyElement src={fox} bottom="200px" right="53%" width="60px" height="60px" />
@@ -271,10 +224,14 @@ export default function App() {
               <SkyElement src={cat} bottom="250px" right="30%" width="60px" height="60px" />
               <SkyElement src={cat} bottom="250px" left="20%" width="60px" height="60px" />
               <SkyElement src={cat} bottom="60px" left="50px" width="60px" height="60px" />
+            </div>    
+            <div className="font-press text-[5rem] text-black mt-[100px] mb-20 text-center">
+              RECENT WORK
             </div>
-            {/* Project showcase with HeroParallax */}
-            <div className="w-full relative -mt-50">
-              <HeroParallax products={products} />
+            <div className="w-full py-4">
+              <StickyScroll
+               content={content}
+               />
             </div>
           </HoverScrollCard>
         </div>
