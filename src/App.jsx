@@ -5,7 +5,6 @@ import HoverScrollCard from "./components/HoverScrollCard.jsx";
 import SkyElement from "./components/skyelements.jsx";
 import ScrollReveal from "./components/ScrollReveal.jsx";
 import { StickyScroll } from "./components/sticky-scroll-reveal.jsx";
-import { HeroParallax } from "./components/HeroParallax.jsx";
 import {  MarioCarousel } from "./components/MarioCarousel.jsx";
 
 
