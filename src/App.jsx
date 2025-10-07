@@ -167,7 +167,7 @@ export default function App() {
             </div>
 
             {/* Animals */}
-            <div className="relative w-[1300px] -mt-[2700px]">
+            <div className="relative w-[1300px] -mt-[2600px]">
               <SkyElement src={fox} bottom="200px" left="5%" width="60px" height="60px" />
               <SkyElement src={fox} bottom="60px" left="25%" width="60px" height="60px" />
               <SkyElement src={fox} bottom="200px" right="53%" width="60px" height="60px" />
