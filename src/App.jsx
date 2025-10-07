@@ -179,10 +179,14 @@ export default function App() {
               <SkyElement src={cat} bottom="250px" left="20%" width="60px" height="60px" />
               <SkyElement src={cat} bottom="60px" left="50px" width="60px" height="60px" />
             </div>    
-              <h1 className="text-black font-press text-[4rem] mb-12 text-center mt-12">
+              <h1 className="text-black font-press text-[5rem] mb-12 text-center mt-12">
                 RECENT WORK
               </h1>
               <MarioCarousel slides={projects} />
+              <h1 className="text-black font-press text-[5rem] text-center">
+              1 YEAR IN DESIGN
+              </h1>
+
           </HoverScrollCard>
         </div>
         </div>

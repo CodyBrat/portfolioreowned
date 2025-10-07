@@ -2,29 +2,39 @@
 const projects = [
   {
     title: "Galactus",
-    link: "https://example.com/project1",
-    src: "src/assets/thumbnail/galactus/homepage.png"
+    link: "https://galactus-three.vercel.app/",
+    src: "src/assets/thumbnail/galactus.png"
   },
   {
-    title: "AI Motion Website",
-    link: "https://example.com/project2",
-    src: "../../assets/thumbnail/aimotion.png"
+    title: "Entrepreneurship Cell Website",
+    link: "https://e-cell2-0.vercel.app/",
+    src: "src/assets/thumbnail/ecell.png"
   },
   {
-    title: "Brand Strategy Deck",
-    link: "https://example.com/project3",
-    src: "https://i.pinimg.com/originals/ef/8a/77/ef8a779ef2fcf2a4af039783be7da96a.gif"
+    title: "Showly - Ticket Booking App",
+    link: "https://showlyama.vercel.app/",
+    src: "src/assets/thumbnail/showly.png"
   },
   {
-    title: "Interactive 3D Gallery",
-    link: "https://example.com/project4",
-    src: "https://i.pinimg.com/474x/70/33/c8/7033c807aa4e9a9894f86ac33a6dd208.jpg"
+    title: "Doozy - E-commerce App",
+    link: "https://doozy-liart.vercel.app/",
+    src: "src/assets/thumbnail/doozy.png"
   },
   {
-    title: "E-commerce Revamp",
-    link: "https://example.com/project5",
-    src: "https://i.pinimg.com/736x/c7/9a/b8/c79ab8083865c329beac3afc25ac35fe.jpg"
+    title: "FixTime - Appointment Scheduling App",
+    link: "https://fix-time-7.vercel.app/",
+    src: "src/assets/thumbnail/fixtime.png"
   },
+  {
+    title: "Tekron - College TechFest Website",
+    link: "https://tekronfest.com",
+    src: "src/assets/thumbnail/tekron.png"
+  },
+  {
+    title: "NIKE Figma prototype design",
+    link: "https://www.figma.com/proto/nbTtlZbuKgh5N7HRetufYi/priyabrata-singh?node-id=48-125&p=f&t=4RcjLWlK7EvONuPJ-1&scaling=scale-down&content-scaling=fixed&page-id=28%3A4",
+    src: "src/assets/thumbnail/nike.png"
+  }
 ];
 
 export default projects;
