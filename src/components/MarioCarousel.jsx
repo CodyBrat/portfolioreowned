@@ -26,7 +26,7 @@ export const MarioCarousel = ({ slides }) => {
             <li key={index} className="flex-shrink-0 w-full px-2">
               <div
                 onClick={() => window.open(slide.link, "_blank")}
-                className="relative w-full h-[36rem] bg-[#FFCB05] cursor-pointer overflow-hidden shadow-2xl flex flex-col transition-transform duration-300 transform hover:scale-105 border-8 border-black"
+                className="relative w-full h-[40rem] bg-[#FFCB05] cursor-pointer overflow-hidden shadow-2xl flex flex-col transition-transform duration-300 transform hover:scale-105 border-8 border-black"
               >
                 {/* Project Image */}
                 <img

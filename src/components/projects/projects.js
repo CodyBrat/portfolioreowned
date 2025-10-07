@@ -3,7 +3,7 @@ const projects = [
   {
     title: "Galactus",
     link: "https://example.com/project1",
-    src: "../../assets/thumbnail/galactus.png"
+    src: "src/assets/thumbnail/galactus/homepage.png"
   },
   {
     title: "AI Motion Website",
