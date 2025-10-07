@@ -16,7 +16,7 @@ const projects = [
     src: "src/assets/thumbnail/showly.png"
   },
   {
-    title: "Doozy - E-commerce App",
+    title: "Doozy E-commerce App",
     link: "https://doozy-liart.vercel.app/",
     src: "src/assets/thumbnail/doozy.png"
   },
