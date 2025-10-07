@@ -1,13 +1,14 @@
+
 const projects = [
   {
-    title: "Portfolio Redesign",
+    title: "Galactus",
     link: "https://example.com/project1",
-    src: "https://i.pinimg.com/736x/71/87/fe/7187fe6aca966d445b4a542c894667ee.jpg"
+    src: "../../assets/thumbnail/galactus.png"
   },
   {
     title: "AI Motion Website",
     link: "https://example.com/project2",
-    src: "https://i.pinimg.com/736x/12/9c/ac/129cac333fdc53799902955c6b729456.jpg"
+    src: "../../assets/thumbnail/aimotion.png"
   },
   {
     title: "Brand Strategy Deck",
