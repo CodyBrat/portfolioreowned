@@ -6,6 +6,7 @@ import SkyElement from "./components/skyelements.jsx";
 import ScrollReveal from "./components/ScrollReveal.jsx";
 import { StickyScroll } from "./components/sticky-scroll-reveal.jsx";
 import { HeroParallax } from "./components/HeroParallax.jsx";
+import {  MarioCarousel } from "./components/MarioCarousel.jsx";
 
 
 import avatarImage from "./assets/avatar.png";
@@ -20,8 +21,7 @@ import smallcloud from "./assets/elements/smallcloud.png";
 import twinkle from "./assets/elements/twinkle.png";
 import fox from "./assets/elements/fox.png";
 import cat from "./assets/elements/cat.png";
-import ecell from "./assets/thumbnail/ecell.png";
-import { products } from "./components/projects/projects.js";
+import  projects from "./components/projects/projects.js";
 
 import SmoothCursor, { DefaultCursorSVG } from "./components/cursors/cursor.jsx";
 import { gsap } from "gsap";
@@ -168,7 +168,7 @@ export default function App() {
             </div>
 
             {/* Animals */}
-            <div className="relative w-[1300px] -mt-[1200px]">
+            <div className="relative w-[1300px] -mt-[2700px]">
               <SkyElement src={fox} bottom="200px" left="5%" width="60px" height="60px" />
               <SkyElement src={fox} bottom="60px" left="25%" width="60px" height="60px" />
               <SkyElement src={fox} bottom="200px" right="53%" width="60px" height="60px" />
@@ -180,9 +180,10 @@ export default function App() {
               <SkyElement src={cat} bottom="250px" left="20%" width="60px" height="60px" />
               <SkyElement src={cat} bottom="60px" left="50px" width="60px" height="60px" />
             </div>    
-            <div className="bg-transparent">
-            <HeroParallax products={products} />
-            </div>
+              <h1 className="text-black font-press text-[4rem] mb-12 text-center mt-12">
+                RECENT WORK
+              </h1>
+              <MarioCarousel slides={projects} />
           </HoverScrollCard>
         </div>
         </div>
