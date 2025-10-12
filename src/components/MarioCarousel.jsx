@@ -47,7 +47,6 @@ export const MarioCarousel = ({ slides }) => {
           ))}
         </ul>
       </div>
-
       {/* Navigation */}
       <div className="absolute top-1/2 w-full flex justify-between -translate-y-1/2 px-4">
         <button
