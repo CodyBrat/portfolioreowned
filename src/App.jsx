@@ -134,16 +134,15 @@ export default function App() {
             );
           }
         }}>
-          <h1 className="cody-text text-[18rem] font-bold text-white drop-shadow-lg -mr-40 -mb-25 font-ethnic">CODY</h1>
+          <h1 className="cody-text text-[22rem] font-bold text-white drop-shadow-lg -mr-40 -mb-25 font-ethnic">CODY</h1>
 
           <div className="avatar-container relative flex items-center justify-center">
-            <img src={avatarImage} alt="Avatar" className="w-120 h-120 object-contain -mt-5 -mb-10 z-10" />
-            <img src={openToWork} alt="Open To Work" className="absolute object-contain w-[260px] h-[260px] -top-45 left-1/2 -translate-x-0.5 z-10 hover:scale-110 transition-transform duration-300" />
+            <img src={avatarImage} alt="Avatar" className="w-140 h-140 object-contain -mt-11 -mb-10 z-10" />
+            <img src={openToWork} alt="Open To Work" className="absolute object-contain w-[270px] h-[270px] -top-45 left-1/2 -translate-x-0.5 z-10 hover:scale-110 transition-transform duration-300" />
           </div>
 
-          <h1 className="brat-text text-[18rem] font-bold text-white drop-shadow-lg -ml-47 -mb-53 font-ethnic">BRAT</h1>
+          <h1 className="brat-text text-[22rem] font-bold text-white drop-shadow-lg -ml-47 -mb-53 font-ethnic">BRAT</h1>
         </div>
-
         {/* Scrollable Cards */}
         <div className="w-full relative flex flex-col items-center gap-40 -mt-50">
           <HoverScrollCard className="w-[95rem] bg-white text-black" height="400rem">
