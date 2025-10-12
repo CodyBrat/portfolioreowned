@@ -161,13 +161,13 @@ export default function App() {
             <SkyElement src={smallcloud} top="300px" left="550px" width="160px" height="110px" />
 
             <div className="absolute top-[500px] left-1/2 -translate-x-1/2 text-center w-[1200px] px-6">
-              <ScrollReveal baseOpacity={0} enableBlur={true} baseRotation={0} blurStrength={10} containerClassName="text-center" textClassName="text-black font-press">
+              <ScrollReveal baseOpacity={0} enableBlur={true} baseRotation={0} blurStrength={10} containerClassName="text-center" textClassName="text-black font-press text-[3rem]">
                 I CRAFT IMMERSIVE DIGITAL WORLDS THAT SHATTER MONOTONY, BLENDING PLAYFULNESS AND PURPOSE TO SPARK AUTHENTIC CONNECTIONS WITH TECHNOLOGY
               </ScrollReveal>
             </div>
 
             {/* Animals */}
-            <div className="relative w-[1300px] -mt-[2600px]">
+            <div className="relative w-[1300px] -mt-[1500px]">
               <SkyElement src={fox} bottom="200px" left="5%" width="60px" height="60px" />
               <SkyElement src={fox} bottom="60px" left="25%" width="60px" height="60px" />
               <SkyElement src={fox} bottom="200px" right="53%" width="60px" height="60px" />
@@ -183,10 +183,69 @@ export default function App() {
                 RECENT WORK
               </h1>
               <MarioCarousel slides={projects} />
-              <h1 className="text-black font-press text-[5rem] text-center">
+              <h1 className="text-black font-press text-[5rem] text-center mt-32">
               1 YEAR IN DESIGN
               </h1>
+              <div className="relative flex justify-center items-center mt-20 w-full px-20">
+                {/* Left-side animated elements */}
+                <div className="absolute left-10 top-[0.6%] flex flex-col gap-12 items-start">
+                  <img
+                    src="https://i.pinimg.com/originals/69/bc/aa/69bcaade16a38429e4064ef419c598d2.gif"
+                    alt="rocky"
+                    className="w-50 h-50 hover:scale-110 transition-transform duration-300 ml-6"
+                  />
+                  <img
+                    src="https://i.pinimg.com/originals/f4/09/4b/f4094bcfda630760b9446590dbcf76dc.gif"
+                    alt="Star spin"
+                    className="w-40 h-40 hover:rotate-12 transition-transform duration-500 ml-1 mt-16"
+                  />
+                  <img
+                    src="https://i.pinimg.com/736x/24/28/12/2428127dc99b4745ff3b8a7f80eab850.jpg"
+                    alt="Pixel fire"
+                    className="w-40 h-40 hover:scale-125 transition-transform duration-300 ml-10 mt-20"
+                  />
+                </div>
 
+                {/* Right-side animated elements */}
+                <div className="absolute right-6 top-[0.6%] flex flex-col gap-10 items-end">
+                  <img
+                    src="https://i.pinimg.com/originals/57/f8/f4/57f8f4940cce10b3daa19f5b50f63d60.gif"
+                    alt="Pixel fire"
+                    className="w-40 h-40 hover:scale-125 transition-transform duration-300 mr-10"
+                  />
+                  <img
+                    src="https://i.pinimg.com/originals/b7/cf/dd/b7cfdd6d49b483b4c2f4afe3886dac35.gif"
+                    alt="Shiny sparkle"
+                    className="w-40 h-40 hover:scale-110 transition-transform duration-300 mr-12 mt-12"
+                  />
+                  <img
+                    src="https://i.pinimg.com/originals/67/00/a5/6700a5c64d66f46ff71111d4a700b2ff.gif"
+                    alt="Pixel heart"
+                    className="w-55 h-55 hover:scale-125 transition-transform duration-300 mr-20 mt-24"
+                  />
+                </div>
+  {/* Center ScrollReveal */}
+            <ScrollReveal
+              baseOpacity={0}
+              enableBlur={true}
+              baseRotation={0}
+              blurStrength={10}
+              enableHoverPop={true}
+              containerClassName="text-center"
+              textClassName="text-black text-[3rem] font-press whitespace-pre-line leading-[1.2]"
+            >
+              {`UI/UX 
+              WEB-DESIGN 
+              VISUAL-DESIGN 
+              MOTION-DESIGN 
+              PRODUCT-MINDSET
+              DESIGN-SYSTEM
+              ACCESSIBILITY 
+              PROTOTYPING
+              ILLUSTRATION
+              NO-CODE`}
+            </ScrollReveal>
+          </div>
           </HoverScrollCard>
         </div>
         </div>

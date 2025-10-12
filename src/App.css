@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Bogle&family=Bangers&family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&family=VT323&display=swap');
 @import "tailwindcss";
 
 .font-pixel {
@@ -7,6 +7,9 @@
 
 .font-press {
   font-family: "Press Start 2P", system-ui;
+}
+.font-bangers {
+  font-family: "Bangers", system-ui;
 }
 
 @font-face {
@@ -19,4 +22,5 @@
 .font-ethnic {
   font-family: "Ethnic", sans-serif;
 }
+
 

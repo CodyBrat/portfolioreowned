@@ -14,6 +14,7 @@ export default function ScrollReveal({
   textClassName = "",
   rotationEnd = "bottom bottom",
   wordAnimationEnd = "bottom bottom",
+  enableHoverPop = false
 }) {
   const containerRef = useRef(null);
 
@@ -21,13 +22,19 @@ export default function ScrollReveal({
     const text = typeof children === "string" ? children : "";
     return text.split(/(\s+)/).map((word, i) => {
       if (word.match(/^\s+$/)) return word;
+
+      // ✅ Apply hover pop class conditionally
+      const hoverClass = enableHoverPop
+        ? "transition-transform duration-300 hover:scale-120 hover:-translate-y-1"
+        : "";
+
       return (
-        <span className="inline-block word" key={i}>
+        <span className={`inline-block word ${hoverClass}`} key={i}>
           {word}
         </span>
       );
     });
-  }, [children]);
+  }, [children, enableHoverPop]);
 
   useEffect(() => {
     const el = containerRef.current;
@@ -77,9 +84,7 @@ export default function ScrollReveal({
 
   return (
     <h2 ref={containerRef} className={`my-5 ${containerClassName}`}>
-      <p
-        className={`text-[clamp(1.6rem,4vw,3rem)] leading-[1.5] font-semibold ${textClassName}`}
-      >
+      <p className={`leading-[1.5] font-semibold ${textClassName}`}>
         {splitText}
       </p>
     </h2>
