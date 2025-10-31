@@ -5,6 +5,7 @@ import HoverScrollCard from "./components/HoverScrollCard.jsx";
 import SkyElement from "./components/skyelements.jsx";
 import ScrollReveal from "./components/ScrollReveal.jsx";
 import { MarioCarousel } from "./components/MarioCarousel.jsx";
+import Loader from "./components/loader.jsx";
 
 import avatarImage from "./assets/avatar.png";
 import swagCursor from "./assets/invisible.png";
@@ -27,7 +28,8 @@ import "./App.css";
 
 export default function App() {
   const [hoveringAvatar, setHoveringAvatar] = useState(false);
-
+  const [loading, setLoading] = useState(true);
+  if (loading) return <Loader onFinish={() => setLoading(false)} />;
   return (
     <>
       {/* === Background === */}
