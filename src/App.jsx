@@ -29,6 +29,7 @@ import "./App.css";
 export default function App() {
   const [hoveringAvatar, setHoveringAvatar] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [submitted, setSubmitted] = useState(false);
   if (loading) return <Loader onFinish={() => setLoading(false)} />;
   return (
     <>
@@ -278,95 +279,109 @@ export default function App() {
             {/* === NEW CONTACT SCROLL CARD === */}
             {/* <HoverScrollCard className="w-[95rem] bg-[#FFE8C2] text-black mt-[-85rem]" height="110rem"> */}
             <HoverScrollCard className="w-[95rem] bg-yellow-100 text-black mt-[-85rem]" height="115rem">
-            <div className="flex flex-col justify-center items-center text-center h-full px-10">
-              
-              {/* Header */}
-              <h1 className="text-[6rem] font-press mb-12 text-black drop-shadow-[4px_4px_0px_#000] ">
-                LET’S CREATE MAGIC ✨
-              </h1>
+              <div className="flex flex-col justify-center items-center text-center h-full px-10">
+                {/* Header */}
+                <h1 className="text-[6rem] font-press mb-12 text-black drop-shadow-[4px_4px_0px_#000] ">
+                  LET’S CREATE MAGIC ✨
+                </h1>
 
-              <p className="text-[2rem] font-press mb-12 max-w-[60%] leading-tight">
-                Got a dream project or idea? Let’s build it together — Mario-style! 
-                Fill in your details below and hit that POWER-UP button 🚀
-              </p>
+                <p className="text-[2rem] font-press mb-12 max-w-[60%] leading-tight">
+                  Got a dream project or idea? Let’s build it together — Mario-style! 
+                  Fill in your details below and hit that POWER-UP button 🚀
+                </p>
 
-              {/* Form Container */}
-              <form 
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  // ⚡ You can connect this with your backend here (API POST request)
-                  alert("Form submitted! 🚀");
-                }}
-                className="w-[70%] bg-[#FFD966] border-8 border-black p-10 rounded-none shadow-[6px_6px_0px_#000] font-press text-left space-y-8 relative"
-              >
-                {/* Floating coins for style */}
-                <div className="absolute -top-8 -right-10 animate-bounce">
-                  <img 
-                    src="https://i.pinimg.com/originals/8f/7e/67/8f7e676cc3fc73c3032aa8545907e870.gif"
-                    alt="coin"
-                    className="w-14 h-14"
-                  />
+                {/* Form or Success Message */}
+                <div className="w-[70%] bg-[#FFD966] border-8 border-black p-10 rounded-none shadow-[6px_6px_0px_#000] font-press text-left space-y-8 relative">
+                  <div className="absolute -top-8 -right-10 animate-bounce">
+                    <img 
+                      src="https://i.pinimg.com/originals/8f/7e/67/8f7e676cc3fc73c3032aa8545907e870.gif"
+                      alt="coin"
+                      className="w-14 h-14"
+                    />
+                  </div>
+
+                  {submitted ? (
+                    <div className="flex flex-col items-center justify-center text-center py-20 animate-fade-in">
+                      <h2 className="text-[4rem] text-black drop-shadow-[4px_4px_0px_#000] mb-6">
+                        MESSAGE SENT!
+                      </h2>
+                      <p className="text-[2rem] max-w-[70%] leading-tight">
+                        Thanks for reaching out, hero! <br /> Your message is flying through the Mushroom Kingdom 🍄
+                      </p>
+                      {/* <button
+                        onClick={() => setSubmitted(false)}
+                        className="mt-10 bg-red-600 text-white border-4 border-black px-10 py-3 text-[2rem] rounded-sm 
+                                  shadow-[5px_5px_0px_#000] hover:bg-yellow-400 hover:text-black 
+                                  transition-all duration-200"
+                      >
+                        ✉️ SEND ANOTHER
+                      </button> */}
+                    </div>
+                  ) : (
+                    <form
+                      onSubmit={(e) => {
+                        e.preventDefault();
+                        // TODO: connect backend API
+                        setSubmitted(true);
+                      }}
+                      className="space-y-8"
+                    >
+                      <div>
+                        <label className="block text-[2rem] text-black mb-2 drop-shadow-[2px_2px_0px_#000]">
+                          YOUR NAME
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          placeholder="Mario, Peach, or maybe YOU!"
+                          className="w-full text-[1.8rem] p-4 border-4 border-black bg-[#fff6d9] shadow-[4px_4px_0px_#000] focus:outline-none focus:bg-yellow-200"
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-[2rem] text-black mb-2 drop-shadow-[2px_2px_0px_#000]">
+                          YOUR EMAIL
+                        </label>
+                        <input
+                          type="email"
+                          required
+                          placeholder="you@castle.com"
+                          className="w-full text-[1.8rem] p-4 border-4 border-black bg-[#fff6d9] shadow-[4px_4px_0px_#000] focus:outline-none focus:bg-yellow-200"
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-[2rem] text-black mb-2 drop-shadow-[2px_2px_0px_#000]">
+                          YOUR MESSAGE
+                        </label>
+                        <textarea
+                          required
+                          rows="4"
+                          placeholder="Tell me your quest, hero!"
+                          className="w-full text-[1.8rem] p-4 border-4 border-black bg-[#fff6d9] shadow-[4px_4px_0px_#000] focus:outline-none focus:bg-yellow-200 resize-none"
+                        />
+                      </div>
+
+                      <div className="flex justify-center mt-10">
+                        <button
+                          type="submit"
+                          className="bg-red-600 text-white border-4 border-black px-12 py-4 text-[2.4rem] rounded-sm 
+                                    shadow-[6px_6px_0px_#000] hover:bg-yellow-400 hover:text-black 
+                                    hover:translate-y-[-4px] active:translate-y-[2px] active:shadow-[3px_3px_0px_#000] 
+                                    transition-all duration-150"
+                        >
+                          ⚡ POWER UP!
+                        </button>
+                      </div>
+                    </form>
+                  )}
                 </div>
 
-                {/* Name Field */}
-                <div>
-                  <label className="block text-[2rem] text-black mb-2 drop-shadow-[2px_2px_0px_#000]">
-                    YOUR NAME
-                  </label>
-                  <input 
-                    type="text" 
-                    required
-                    placeholder="Mario, Peach, or maybe YOU!"
-                    className="w-full text-[1.8rem] p-4 border-4 border-black bg-[#fff6d9] shadow-[4px_4px_0px_#000] focus:outline-none focus:bg-yellow-200"
-                  />
-                </div>
-
-                {/* Email Field */}
-                <div>
-                  <label className="block text-[2rem] text-black mb-2 drop-shadow-[2px_2px_0px_#000]">
-                    YOUR EMAIL
-                  </label>
-                  <input 
-                    type="email" 
-                    required
-                    placeholder="you@castle.com"
-                    className="w-full text-[1.8rem] p-4 border-4 border-black bg-[#fff6d9] shadow-[4px_4px_0px_#000] focus:outline-none focus:bg-yellow-200"
-                  />
-                </div>
-
-                {/* Message Field */}
-                <div>
-                  <label className="block text-[2rem] text-black mb-2 drop-shadow-[2px_2px_0px_#000]">
-                    YOUR MESSAGE
-                  </label>
-                  <textarea 
-                    required
-                    rows="4"
-                    placeholder="Tell me your quest, hero!"
-                    className="w-full text-[1.8rem] p-4 border-4 border-black bg-[#fff6d9] shadow-[4px_4px_0px_#000] focus:outline-none focus:bg-yellow-200 resize-none"
-                  />
-                </div>
-
-                {/* Submit Button */}
-                <div className="flex justify-center mt-10">
-                  <button 
-                    type="submit"
-                    className="bg-red-600 text-white border-4 border-black px-12 py-4 text-[2.4rem] rounded-sm 
-                              shadow-[6px_6px_0px_#000] hover:bg-yellow-400 hover:text-black 
-                              hover:translate-y-[-4px] active:translate-y-[2px] active:shadow-[3px_3px_0px_#000] 
-                              transition-all duration-150"
-                  >
-                    ⚡ POWER UP!
-                  </button>
-                </div>
-              </form>
-
-              {/* Bottom Text */}
-              <p className="mt-16 text-[1.6rem] text-black font-press opacity-80">
-                “Every adventure starts with a message.” — Mario 🧢
-              </p>
-            </div>
-          </HoverScrollCard>
+                <p className="mt-16 text-[1.6rem] text-black font-press opacity-80">
+                  “Every adventure starts with a message.” — Mario 🧢
+                </p>
+              </div>
+            </HoverScrollCard>
 
           </div>
         </div>
@@ -374,3 +389,4 @@ export default function App() {
     </>
   );
 }
+
